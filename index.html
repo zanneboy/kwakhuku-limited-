@@ -22,4 +22,116 @@
   .btn-orange{background:#F99D2F;color:#1E1E1E}
   .btn-red{background:#A61C2A;color:white}
   .btn:hover{transform:translateY(-2px)}
-  .section{padding:40px 20px
+  .section{padding:40px 20px;max-width:1000px;margin:0 auto}
+  .badge{display:inline-block;background:#FFF4E6;color:#A61C2A;padding:6px 14px;border-radius:20px;font-weight:700;font-size:12px;letter-spacing:1px;margin-bottom:12px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:20px}
+  @media(max-width:600px){.grid{grid-template-columns:1fr}}
+  .card{background:white;border-radius:16px;padding:20px;box-shadow:0 4px 20px rgba(0,0,0,0.05);border:1px solid #f0e6d8;text-align:center}
+  .card h3{font-size:20px;margin:10px 0 5px}
+  .price{font-size:28px;font-weight:800;color:#A61C2A}
+  .price small{font-size:14px;color:#888;font-weight:400}
+  .card ul{list-style:none;text-align:left;margin:15px 0;font-size:14px}
+  .card ul li{padding:5px 0} .card ul li:before{content:"✓ ";color:#F99D2F;font-weight:bold}
+  .order-box{background:#1E1E1E;color:white;border-radius:20px;padding:30px;text-align:center}
+  .order-box input, .order-box select{width:100%;padding:14px;margin:8px 0;border-radius:10px;border:none;font-size:16px}
+  .trust{display:flex;justify-content:space-around;text-align:center;margin-top:25px;flex-wrap:wrap;gap:15px}
+  .trust div strong{font-size:22px;display:block;color:#F99D2F}
+  .footer{background:#1E1E1E;color:#888;text-align:center;padding:30px 20px;font-size:13px;margin-top:40px}
+</style>
+</head>
+<body>
+
+<div class="top-bar">🚚 TUESDAY & FRIDAY DELIVERY | MATERO • KABANANA • CHUNGA • 15 MILES</div>
+
+<header>
+  <div class="logo-k">KWA <span>KHUKU</span></div>
+  <div class="tagline">FARM FRESH FROM 15 MILES</div>
+</header>
+
+<div class="hero">
+  <h1>Fresh Village Chickens<br><span>Direct From Our Farm</span></h1>
+  <p>No brokers. No frozen imports. Raised in 15 Miles, delivered dressed and clean to Matero & Kabanana.</p>
+  <a href="#order" class="btn btn-orange">Order on WhatsApp - K110</a>
+  <a href="https://wa.me/260970000000" class="btn btn-red">Call: 0970 000 000</a>
+</div>
+
+<div class="section">
+  <span class="badge">OUR PRICES - 15 MAY 2026</span>
+  <h2>Simple. Fair. Farm Price.</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>🐔 Live Chicken</h3>
+      <div class="price">K100 <small>/ each</small></div>
+      <ul><li>1.2kg - 1.5kg live weight</li><li>Healthy & vaccinated</li><li>Pick from farm or collection point</li></ul>
+      <a href="#order" class="btn btn-orange" style="width:100%">Order Live</a>
+    </div>
+    <div class="card" style="border:2px solid #F99D2F">
+      <span class="badge">MOST POPULAR</span>
+      <h3>🔥 Dressed Chicken</h3>
+      <div class="price">K110 <small>/ each</small></div>
+      <ul><li>Cleaned & packed</li><li>Ready for pot</li><li>1kg+ meat weight</li></ul>
+      <a href="#order" class="btn btn-red" style="width:100%">Order Dressed</a>
+    </div>
+    <div class="card">
+      <h3>🏠 Home Delivery</h3>
+      <div class="price">K130 <small>/ each (3+ birds)</small></div>
+      <ul><li>Delivered to your door</li><li>Matero, Kabanana, Chunga</li><li>Tuesday & Friday 10AM</li></ul>
+      <a href="#order" class="btn btn-orange" style="width:100%">Order Delivery</a>
+    </div>
+    <div class="card">
+      <h3>📦 Bulk Order</h3>
+      <div class="price">K100 <small>/ each (20+)</small></div>
+      <ul><li>Churches, Schools, Restaurants</li><li>Free delivery 20+ birds</li><li>Pay with MoMo</li></ul>
+      <a href="#order" class="btn btn-orange" style="width:100%">Bulk Price</a>
+    </div>
+  </div>
+
+  <div class="trust">
+    <div><strong>46+</strong> Happy customers this month</div>
+    <div><strong>2x</strong> Delivery per week</div>
+    <div><strong>100%</strong> Refund if not fresh</div>
+  </div>
+</div>
+
+<div class="section" id="order">
+  <div class="order-box">
+    <h2>Order in 30 Seconds</h2>
+    <p style="opacity:0.7;margin-bottom:20px">Fill this, we will WhatsApp you to confirm.</p>
+    <input type="text" id="name" placeholder="Your Name e.g. Agness">
+    <input type="tel" id="phone" placeholder="Phone e.g. 0970...">
+    <select id="type">
+      <option>Dressed - K110</option>
+      <option>Live - K100</option>
+      <option>Home Delivery - K130</option>
+      <option>Bulk 20+ - K100</option>
+    </select>
+    <select id="qty">
+      <option>1 Chicken</option><option>2 Chickens</option><option>3 Chickens</option><option>5 Chickens</option><option>10 Chickens</option>
+    </select>
+    <select id="area">
+      <option>Matero Main Market</option><option>Kabanana - Near Clinic</option><option>Chunga Bus Stop</option><option>15 Miles Farm Pickup</option>
+    </select>
+    <button onclick="sendOrder()" class="btn btn-orange" style="width:100%;font-size:18px;margin-top:15px">SEND ORDER ON WHATSAPP</button>
+    <p style="font-size:12px;margin-top:15px;opacity:0.6">Pay with MTN MoMo or Airtel Money after confirmation. No auto-charge.</p>
+  </div>
+</div>
+
+<div class="footer">
+  KWA KHUKU - Farm Fresh From 15 Miles<br>
+  15 Miles, Lusaka | Matero • Kabanana • Chunga<br><br>
+  © 2026 Kwa Khuku. All rights reserved.
+</div>
+
+<script>
+function sendOrder(){
+  let name=document.getElementById('name').value||'Customer';
+  let phone=document.getElementById('phone').value;
+  let type=document.getElementById('type').value;
+  let qty=document.getElementById('qty').value;
+  let area=document.getElementById('area').value;
+  let msg=`Hello Kwa Khuku! My name is ${name} (${phone}). I want to order ${qty} - ${type}. Collection: ${area}.`;
+  window.open(`https://wa.me/260970000000?text=${encodeURIComponent(msg)}`,'_blank');
+}
+</script>
+</body>
+</html>
